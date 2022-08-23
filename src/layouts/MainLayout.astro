@@ -4,9 +4,8 @@ import HeadSEO from '../components/HeadSEO.astro';
 import Header from '../components/Header/Header.astro';
 import PageContent from '../components/PageContent/PageContent.astro';
 import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
-// import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
+import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
 import * as CONFIG from '../config';
-import { customRequest } from '@algolia/client-search';
 
 const { frontmatter = {}, headings } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -14,6 +13,7 @@ const currentPage = Astro.url.pathname;
 const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
 const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + currentFile;
 ---
+
 <html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial">
 	<head>
 		<HeadCommon />
@@ -30,7 +30,6 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 				--doc-padding: 2rem;
 			}
 			.layout {
-				margin-top: 50px;
 				display: grid;
 				grid-auto-flow: column;
 				grid-template-columns:
@@ -74,7 +73,6 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 			}
 			@media (min-width: 50em) {
 				.layout {
-					margin-top: 50px;
 					overflow: initial;
 					grid-template-columns:
 						20rem
@@ -91,8 +89,6 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 
 			@media (min-width: 72em) {
 				.layout {
-					margin-top: 50px;
-
 					grid-template-columns:
 						20rem
 						minmax(0, var(--max-width))
@@ -110,10 +106,10 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 	</head>
 
 	<body>
-		<Header {currentPage}  />
+		<Header {currentPage} />
 		<main class="layout">
 			<aside id="grid-left" class="grid-sidebar" title="Site Navigation">
-				<LeftSidebar {currentPage} {canonicalURL} />
+				<LeftSidebar {currentPage} />
 			</aside>
 			<div id="grid-main">
 				<PageContent {frontmatter} {headings} {githubEditUrl}>
@@ -121,7 +117,7 @@ const githubEditUrl = CONFIG.GITHUB_EDIT_URL && CONFIG.GITHUB_EDIT_URL + current
 				</PageContent>
 			</div>
 			<aside id="grid-right" class="grid-sidebar" title="Table of Contents">
-				<!-- <RightSidebar {headings} {githubEditUrl} /> -->
+				<RightSidebar {headings} {githubEditUrl} />
 			</aside>
 		</main>
 	</body>
