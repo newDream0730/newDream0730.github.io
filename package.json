@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "gpm-lds-astro",
   "repository": "https://github.com/shah/gpm-lds-astro.git",
   "version": "0.0.2",
@@ -12,11 +13,17 @@
     "templates",
     "framework"
   ],
+=======
+  "name": "@example/docs",
+  "version": "0.0.1",
+  "private": true,
+>>>>>>> f504e447f718a9e93b04b204698361f67bef2abb
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+<<<<<<< HEAD
     "astro": "astro",
     "prepare": "husky install",
     "postinstall": "cd src/components && npm link && cd ../../ && npm link @gpm-lds-astro/components && cd src/layouts && npm link && cd ../../ && npm link @gpm-lds-astro/layouts"
@@ -63,5 +70,22 @@
     "prettier-plugin-astro": "^0.5.4",
     "sass": "^1.54.8",
     "uuid": "^8.3.2"
+=======
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@algolia/client-search": "^4.13.1",
+    "@docsearch/css": "^3.1.0",
+    "@docsearch/react": "^3.1.0",
+    "@types/react": "^17.0.45",
+    "preact": "^10.7.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@astrojs/preact": "^1.0.2",
+    "@astrojs/react": "^1.0.0",
+    "astro": "^1.0.6"
+>>>>>>> f504e447f718a9e93b04b204698361f67bef2abb
   }
 }

@@ -1,9 +1,14 @@
 ---
+<<<<<<< HEAD
 import { BASE_SITE_URL } from '@components/config';
 
 import './styles/theme.css';
 import './styles/index.css';
 import './styles/LDS.css';
+=======
+import '../styles/theme.css';
+import '../styles/index.css';
+>>>>>>> f504e447f718a9e93b04b204698361f67bef2abb
 ---
 
 <!-- Global Metadata -->
@@ -11,6 +16,7 @@ import './styles/LDS.css';
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 
+<<<<<<< HEAD
 <link rel="sitemap" href="/sitemap.xml" />
 <link rel="stylesheet" type="text/css" href="./" />
 
@@ -23,10 +29,17 @@ import './styles/LDS.css';
 />
 
 <base href={`${BASE_SITE_URL}/`} />
+=======
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
+
+<link rel="sitemap" href="/sitemap.xml" />
+>>>>>>> f504e447f718a9e93b04b204698361f67bef2abb
 
 <!-- Preload Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<<<<<<< HEAD
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet" />
 
 <!-- Scrollable a11y code helper -->
@@ -41,6 +54,27 @@ import './styles/LDS.css';
   } else {
     root.classList.remove('theme-dark');
   }
+=======
+<link
+	href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap"
+	rel="stylesheet"
+/>
+
+<!-- Scrollable a11y code helper -->
+<script src="/make-scrollable-code-focusable.js" is:inline>
+
+</script>
+
+<!-- This is intentionally inlined to avoid FOUC -->
+<script is:inline>
+	const root = document.documentElement;
+	const theme = localStorage.getItem('theme');
+	if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		root.classList.add('theme-dark');
+	} else {
+		root.classList.remove('theme-dark');
+	}
+>>>>>>> f504e447f718a9e93b04b204698361f67bef2abb
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

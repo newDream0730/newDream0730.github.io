@@ -12,10 +12,17 @@ pnpm-debug.log*
 
 
 # environment variables
+<<<<<<< HEAD
+=======
+.env
+>>>>>>> f504e447f718a9e93b04b204698361f67bef2abb
 .env.production
 
 # macOS-specific files
 .DS_Store
+<<<<<<< HEAD
 
 # Local Netlify folder
 .netlify
+=======
+>>>>>>> f504e447f718a9e93b04b204698361f67bef2abb
